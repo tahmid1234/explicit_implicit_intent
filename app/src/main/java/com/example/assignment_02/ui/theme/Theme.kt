@@ -3,6 +3,7 @@ package com.example.assignment_02.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -60,6 +61,16 @@ fun Assignment_02Theme(
         colorScheme = colorScheme,
         typography = Typography,
         content = content
+    )
+}
+
+@Composable
+fun netflixButtonColors(): ButtonColors {
+    return ButtonColors(
+        containerColor = Color(0xFFE50914),
+        contentColor = Color.White,
+        disabledContentColor = Color.White,
+        disabledContainerColor = Color.Gray
     )
 }
 

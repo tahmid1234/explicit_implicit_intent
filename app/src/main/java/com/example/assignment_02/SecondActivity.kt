@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.assignment_02.ui.theme.Assignment_02Theme
+import com.example.assignment_02.ui.theme.netflixButtonColors
 
 class SecondActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,19 +48,22 @@ fun SecondScreen(onBackClick: () -> Unit) {
         BasicText("Mobile Software Engineering Challenges",
             style = TextStyle(
                 fontWeight = FontWeight.Bold,
-                color = Color(0xF5EE0067)
+                color = Color.LightGray
             ),
             modifier = Modifier.align(Alignment.Start))
         Spacer(modifier = Modifier.height(8.dp))
 
         challanges.forEachIndexed{index,challange ->
             Text(text= " ${index + 1}. $challange",
-            modifier = Modifier.align(Alignment.Start)
+                color = Color.White,
+                modifier = Modifier.align(Alignment.Start)
             )
         }
         Spacer(modifier = Modifier.height(80.dp))
 
-        Button(onClick = onBackClick) {
+        Button(onClick = onBackClick,
+            colors = netflixButtonColors(),
+            modifier = Modifier.padding(8.dp)) {
             Text("Main Activity")
         }
     }
