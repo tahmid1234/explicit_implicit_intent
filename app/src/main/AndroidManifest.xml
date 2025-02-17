@@ -25,13 +25,22 @@
         </activity>
         <activity
             android:name=".SecondActivity"
+            android:label="Open Second Activity - Test"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.assignment_02.Start_Second_Activity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ThirdActivity"
+            android:label="Open Third Activity - Test"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.assignment_02.Start_Second_Activity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
