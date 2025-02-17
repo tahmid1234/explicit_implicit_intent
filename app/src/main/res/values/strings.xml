@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Assignment_02</string>
+
+    <!--    Name & Student Id-->
+    <string name="full_name">Md. Tahmid Islam</string>
+    <string name="studnet_id">1556234</string>
+
+    <string-array name="challanges">
+        <item>Device Fragmentation</item>
+        <item>Security and Privacy Concerns</item>
+        <item>Performance Optimization</item>
+        <item>Battery Life Management</item>
+        <item>UX/UI Consistency</item>
+    </string-array>
+</resources>
