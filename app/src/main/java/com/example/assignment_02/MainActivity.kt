@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.assignment_02.ui.theme.Assignment_02Theme
 import com.example.assignment_02.ui.theme.netflixButtonColors
+import com.example.assignment_02.ImageCaptureActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,10 @@ class MainActivity : ComponentActivity() {
                     when (action) {
                         "explicit" -> {
                             val intent = Intent(this, SecondActivity::class.java)
+                            startActivity(intent)
+                        }
+                        "imageActivity" -> {
+                            val intent = Intent(this, ImageCaptureActivity::class.java)
                             startActivity(intent)
                         }
                         "implicit" -> {
@@ -83,6 +88,15 @@ fun MainScreen(onButtonClick: (String) -> Unit) {
             ) {
             Text("Start Activity Implicitly")
         }
+
+        Button(onClick = { onButtonClick("imageActivity") },
+            colors = netflixButtonColors(),
+            modifier = Modifier.padding(8.dp)
+        ) {
+            Text("View Image Activity")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
     }
 }
 

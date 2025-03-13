@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.CAMERA" />
+<!--    <uses-permission android:name="android.permission.MediaStore.createWriteRequest" />-->
+<!--    <uses-feature android:name="android.hardware.camera" android:required="true"/>-->
 
     <application
         android:allowBackup="true"
@@ -32,7 +35,18 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-<!--        <activity-->
+        <activity android:name=".ImageCaptureActivity" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+       <!--        <activity-->
 <!--            android:name=".ThirdActivity"-->
 <!--            android:label="Open Third Activity - Test"-->
 <!--            android:exported="true">-->
