@@ -41,15 +41,15 @@ class MainActivity : ComponentActivity() {
                         "implicit" -> {
 //                            val intent = Intent("com.example.assignment_02.SECOND_ACTIVITY")
 //                            startActivity(intent)
-                              val imIntent = Intent()
-                              imIntent.setAction("com.example.assignment_02.Start_Second_Activity")
+                            val imIntent = Intent()
+                            imIntent.setAction("com.example.assignment_02.Start_Second_Activity")
 
-                              if (imIntent.resolveActivity(packageManager)!=null){
+                            if (imIntent.resolveActivity(packageManager)!=null){
                                 startActivity(imIntent)
-                              }
-                              else{
-                                  Toast.makeText(this,"No app can handle this action",Toast.LENGTH_SHORT).show()
-                              }
+                            }
+                            else{
+                                Toast.makeText(this,"No app can handle this action",Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
                 }
@@ -76,16 +76,16 @@ fun MainScreen(onButtonClick: (String) -> Unit) {
         Button(onClick = { onButtonClick("explicit") },
             colors = netflixButtonColors(),
             modifier = Modifier.padding(8.dp)
-            ) {
+        ) {
             Text("Start Activity Explicitly")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = { onButtonClick("implicit") },
-                colors = netflixButtonColors(),
-                modifier = Modifier.padding(8.dp)
-            ) {
+            colors = netflixButtonColors(),
+            modifier = Modifier.padding(8.dp)
+        ) {
             Text("Start Activity Implicitly")
         }
 
